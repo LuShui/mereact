@@ -1,7 +1,6 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-.idea/ workspace.xml
 
 # testing
 /coverage
@@ -15,6 +14,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+
+.idea/*
 
 npm-debug.log*
 yarn-debug.log*
