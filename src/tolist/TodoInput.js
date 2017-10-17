@@ -8,22 +8,33 @@ class TodoInput extends React.Component{
         super(props);
         this.changefunc = this.changefunc.bind(this);
         this.inputchangefunc = this.inputchangefunc.bind(this);
+        this.state = {
+            inputvalue:''
+        }
         this.inputvalue = '';
     }
 
     changefunc(e){
-        this.props.onAddfunc(this.inputvalue);
+        if (this.state.inputvalue){
+            this.props.onAddfunc(this.state.inputvalue);
+            this.setState({
+                inputvalue:''
+            });
+        }
     }
 
     inputchangefunc(e){
-        this.inputvalue = e.target.value;
+        let value = e.target.value;
+        this.setState({
+            inputvalue:value
+        });
     }
 
     render(){
         return(
-            <div>
-                <input onChange={this.inputchangefunc} />
-                <a onClick={this.changefunc}>提交</a>
+            <div className="inputbox">
+                <input onChange={this.inputchangefunc} value={this.state.inputvalue}/>
+                <a className="addbutton" onClick={this.changefunc}>提交</a>
             </div>
         )
     }

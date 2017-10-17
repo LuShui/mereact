@@ -6,9 +6,23 @@
 import React from 'react'
 
 class LiComponent extends React.Component{
+    constructor(props){
+        super(props);
+        this.deletefunc = this.deletefunc.bind(this);
+
+    }
+
+    deletefunc(){
+        this.props.ondeletefunc(this.props.name);
+    }
+
     render(){
         return(
-            <li>{this.props.name}</li>
+            <li className="liitem">
+                <a onClick={this.deletefunc}>
+                {this.props.name}
+                </a>
+            </li>
         )
     }
 }
@@ -21,7 +35,7 @@ class ListComponent extends React.Component{
         return(
             <ul>
                 {array.map((item,index)=>
-                    <LiComponent name={item} key={index}></LiComponent>
+                    <LiComponent name={item} key={index} ondeletefunc={this.props.onDeletefunc}></LiComponent>
                 )}
             </ul>
         )
