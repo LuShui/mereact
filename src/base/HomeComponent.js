@@ -6,11 +6,9 @@ import BaseMessage from  './Base'
 import EventComponent from './Event'
 import NameForm from './NameForm'
 import Calculator from './Calculator'
+import ListComponent from './ListComponent'
 
 class HomeComponent extends React.Component{
-    constructor(props){
-        super(props)
-    }
 
     render(){
         return (
@@ -20,6 +18,7 @@ class HomeComponent extends React.Component{
                 <EventComponent></EventComponent>
                 <NameForm></NameForm>
                 <Calculator></Calculator>
+                <ListComponent></ListComponent>
             </div>
         )
     }
