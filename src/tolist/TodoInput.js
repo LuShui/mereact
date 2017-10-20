@@ -3,6 +3,7 @@
  */
 
 import React from 'react'
+
 class TodoInput extends React.Component{
     constructor(props){
         super(props);
@@ -39,5 +40,6 @@ class TodoInput extends React.Component{
         )
     }
 }
+
 
 export default TodoInput;
