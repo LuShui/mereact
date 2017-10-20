@@ -1,59 +1,24 @@
 /**
  * Created by Administrator on 2017/10/19.
  */
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from './action'
-import AddTodo from './AddTodo'
-import TodoList from './TodoList'
-import Footer from './Footer'
+import React from 'react'
+class ChildComponent extends React.Component{
+    constructor(){
+        super();
+        this.clickfunc = this.clickfunc.bind(this);
+    }
 
-class App extends Component {
-    render() {
-        // Injected by connect() call:
-        const { dispatch, visibleTodos, visibilityFilter } = this.props
-        return (
+    clickfunc(){
+        this.props.onBaseClick(1);
+    }
+
+    render(){
+        return(
             <div>
-                <AddTodo
-                    onAddClick={text =>
-                        dispatch(addTodo(text))
-                    } />
-                <TodoList
-                    todos={visibleTodos}
-                    onTodoClick={index =>
-                        dispatch(completeTodo(index))
-                    } />
-                <Footer
-                    filter={visibilityFilter}
-                    onFilterChange={nextFilter =>
-                        dispatch(setVisibilityFilter(nextFilter))
-                    } />
+                <h3 onClick={this.clickfunc}>{this.props.visibilityFilter.toString()}</h3>
             </div>
         )
     }
 }
 
-
-
-function selectTodos(todos, filter) {
-    switch (filter) {
-        case VisibilityFilters.SHOW_ALL:
-            return todos
-        case VisibilityFilters.SHOW_COMPLETED:
-            return todos.filter(todo => todo.completed)
-        case VisibilityFilters.SHOW_ACTIVE:
-            return todos.filter(todo => !todo.completed)
-    }
-}
-
-// Which props do we want to inject, given the global state?
-// Note: use https://github.com/faassen/reselect for better performance.
-function select(state) {
-    return {
-        visibleTodos: selectTodos(state.todos, state.visibilityFilter),
-        visibilityFilter: state.visibilityFilter
-    }
-}
-
-// 包装 component ，注入 dispatch 和 state 到其默认的 connect(select)(App) 中；
-export default connect(select)(App)
+export default ChildComponent;

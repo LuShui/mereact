@@ -1,9 +1,4 @@
-/**
- * Created by Administrator on 2017/10/20.
- */
-
-
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 export default class Footer extends Component {
     renderFilter(filter, name) {
@@ -12,7 +7,7 @@ export default class Footer extends Component {
         }
 
         return (
-            <a href='#' onClick={e => {
+            <a onClick={e => {
                 e.preventDefault()
                 this.props.onFilterChange(filter)
             }}>

@@ -1,8 +1,4 @@
-/**
- * Created by Administrator on 2017/10/20.
- */
-
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 export default class Todo extends Component {
     render() {
