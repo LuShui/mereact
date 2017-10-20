@@ -21,6 +21,7 @@ class ParentComponent extends React.Component{
     }
 }
 function select(state) {
+    console.log(state)
     return {
         visibleTodos: true,
         visibilityFilter: state.visibilityFilter

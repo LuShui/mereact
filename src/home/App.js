@@ -4,7 +4,7 @@ import './App.css'
 // import TodoList from '../tolist/TodoList'
 import Indexcomponent from '../redux/Indexcomponent';
 // import IndexCom from '../reduxbest/index'
-
+// import Indexcomponent from '../more/IndexComponent'
 
 class HelloMessage extends React.Component {
     render() {
