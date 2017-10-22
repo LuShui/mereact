@@ -9,22 +9,21 @@ import { addTodo } from './action';
 
 class ParentComponent extends React.Component{
     render(){
-        const { dispatch, visibleTodos, visibilityFilter } = this.props
+        const { dispatch, array } = this.props;
+
         return(
-            <div>
+            <div className="parseele">
                 <div>
-                    <ChildComponent visibilityFilter={visibilityFilter}  onBaseClick={text=>dispatch(addTodo(1))}></ChildComponent>
-                    <SonComponent visibilityFilter={visibilityFilter}></SonComponent>
+                    <ChildComponent onaddfunc={text=>dispatch(addTodo(text))}></ChildComponent>
+                    <SonComponent array={array}></SonComponent>
                 </div>
             </div>
         )
     }
 }
 function select(state) {
-    console.log(state)
     return {
-        visibleTodos: true,
-        visibilityFilter: state.visibilityFilter
+        array: state.array
     };
 }
 export default  connect(select)(ParentComponent);

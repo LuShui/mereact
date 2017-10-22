@@ -5,7 +5,7 @@ import React from 'react'
 import ParentComponent from './ParentComponent'
 import { Provider } from 'react-redux'
 import store from './store'
-
+import './style.css'
 class Indexcomponent extends React.Component{
     render(){
         return(

@@ -1,0 +1,49 @@
+.parseele{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.childele{
+    height: 35px;
+}
+
+input,a{
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+input{
+    width: 350px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid darkgray;
+    text-indent: 0.5em;
+    border-right: none;
+}
+
+a{
+    width: 50px;
+    background-color: gainsboro;
+}
+a:hover{
+    cursor: pointer;
+    background-color: #42ccff;
+    color: white;
+}
+
+li{
+    display: block;
+    border-bottom: 1px solid gainsboro;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: left;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+
