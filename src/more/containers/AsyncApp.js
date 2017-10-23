@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from '../actions'
 import Picker from './Picker'
@@ -50,8 +50,7 @@ class AsyncApp extends Component {
             </span>
                     }
                     {!isFetching &&
-                    <a href='#'
-                       onClick={this.handleRefreshClick}>
+                    <a onClick={this.handleRefreshClick}>
                         Refresh
                     </a>
                     }

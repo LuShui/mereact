@@ -4,13 +4,14 @@ import './App.css'
 // import TodoList from '../tolist/TodoList'
 // import Indexcomponent from '../redux/Indexcomponent';
 // import IndexCom from '../reduxbest/index'
-import Indexcomponent from '../more/IndexComponent'
+// import Indexcomponent from '../more/IndexComponent'
+import Index from '../async/Index'
 
 class HelloMessage extends React.Component {
     render() {
         return (
             <div className="App">
-                <Indexcomponent></Indexcomponent>
+                <Index></Index>
             </div>
         );
     }

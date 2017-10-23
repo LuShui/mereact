@@ -5,6 +5,7 @@ import {
 } from './actions'
 
 function selectedSubreddit(state = 'reactjs', action) {
+    console.log(action);
     switch (action.type) {
         case SELECT_SUBREDDIT:
             return action.subreddit
