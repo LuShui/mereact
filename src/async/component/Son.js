@@ -4,13 +4,12 @@
 
 import React  from 'react'
 
-
 class Licomponent extends React.Component{
     render(){
         return(
             <li>
                 <div>
-                    111111
+                    {this.props.name}
                 </div>
             </li>
         );
@@ -21,7 +20,7 @@ class Licomponent extends React.Component{
 class Son extends React.Component{
 
     render(){
-        let array = [1,2,3,4,5,6,7,8];
+        let array = this.props.array;
         return(
             <div>
                 <ul>

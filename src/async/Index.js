@@ -4,14 +4,16 @@
 
 import React  from 'react'
 import Parsent from './component/Parent'
+import store from './reducers'
+import { Provider } from 'react-redux'
 
 class Index extends React.Component{
 
     render(){
         return(
-            <div>
+            <Provider store={store}>
                 <Parsent></Parsent>
-            </div>
+            </Provider>
         );
     }
 }
