@@ -5,13 +5,13 @@ import './App.css'
 // import Indexcomponent from '../redux/Indexcomponent';
 // import IndexCom from '../reduxbest/index'
 // import Indexcomponent from '../more/IndexComponent'
-import Index from '../async/Index'
-
+// import Index from '../async/Index'
+import IndexComponent from '../router/index'
 class HelloMessage extends React.Component {
     render() {
         return (
             <div className="App">
-                <Index></Index>
+                <IndexComponent></IndexComponent>
             </div>
         );
     }

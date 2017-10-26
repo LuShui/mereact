@@ -4,8 +4,10 @@
 
 import React  from 'react'
 import Parsent from './component/Parent'
-import store from './reducers'
+import configureStore from './reducers'
 import { Provider } from 'react-redux'
+
+const store = configureStore();
 
 class Index extends React.Component{
 

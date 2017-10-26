@@ -9,7 +9,7 @@ class Licomponent extends React.Component{
         return(
             <li>
                 <div>
-                    {this.props.name}
+                    {this.props.json.name}
                 </div>
             </li>
         );
@@ -24,7 +24,7 @@ class Son extends React.Component{
         return(
             <div>
                 <ul>
-                    {array.map((item,index)=><Licomponent name={item} key={index}/>)}
+                    {array.map((item,index)=><Licomponent json={item} key={index}/>)}
                 </ul>
             </div>
         )
