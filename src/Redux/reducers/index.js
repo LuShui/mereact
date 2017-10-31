@@ -5,11 +5,10 @@ import {BASE_ACTION} from '../actions/index'
 function array(state=[],action) {
     if (action.type === BASE_ACTION){
         return[
-            ...action.value,
-            ...state
+            ...action.value
         ];
     }else {
-        return state;
+        return [];
 
     }
 }

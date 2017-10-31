@@ -3,14 +3,10 @@
  */
 import React from 'react'
 import './style.css'
-import { connect } from 'react-redux';
-import {baseAction} from '../../Redux/actions/index'
-class ListComponent extends React.Component{
+import {  browserHistory } from 'react-router';
 
-    componentDidMount(){
-        const {dispatch} = this.props;
-        dispatch(baseAction(1));
-    }
+
+class ListComponent extends React.Component{
 
     render(){
         let array = this.props.array;
@@ -22,21 +18,24 @@ class ListComponent extends React.Component{
     }
 }
 
-
 class LiComponent extends React.Component{
+    constructor(){
+        super();
+        this.onclickfunc = this.onclickfunc.bind(this);
+    }
+
+    onclickfunc(){
+        let json = this.props.value;
+        browserHistory.push('/list/'+ json.id);
+    }
+
     render(){
         return(
-            <li>
+            <li onClick={this.onclickfunc}>
                 {this.props.value.des}
             </li>
         )
     }
 }
 
-function soure(state) {
-    return{
-        array:state.array
-    }
-}
-
-export default connect(soure)(ListComponent);
+export default ListComponent;
